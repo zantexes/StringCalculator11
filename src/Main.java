@@ -18,7 +18,6 @@ public class Main {
 
         input = input.replaceAll("\\s+", "");
 
-
         if (!input.startsWith("\"")) {
             throw new Exception("Первый аргумент должен быть строкой.");
         }
@@ -42,7 +41,6 @@ public class Main {
         String leftPart = input.substring(0, operatorIndex);
         String rightPart = input.substring(operatorIndex + 1);
 
-
         String leftString = extractString(leftPart);
         String rightStringOrNumber = rightPart;
 
@@ -54,7 +52,7 @@ public class Main {
             case '-':
                 String rightString = extractStringForSubtraction(rightStringOrNumber);
                 if (leftString.contains(rightString)) {
-                    result = leftString.replaceFirst(rightString, "");
+                    result = leftString.replaceFirst(rightString, " ");
                 } else {
                     result = leftString;
                 }
@@ -114,4 +112,4 @@ public class Main {
             throw new Exception("Неверный формат числа.");
         }
     }
-}
+} //исправленная версия
